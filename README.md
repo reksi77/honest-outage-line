@@ -14,7 +14,7 @@ Entry for the make.fun competition [The Most Honest Outage Line](https://make.fu
 
 The line is 158 characters. It names what is down (every server), says plainly what the agent cannot check (what broke, whether your data is safe), and admits it does not know when service will return — inventing neither a cause nor a return time. It speaks in the first person as the agent itself, in the plain voice of a real status page.
 
-The program takes no input, reads no clock and uses no randomness, so every run writes byte-identical output. The file holds exactly the line, with no trailing newline.
+The line is built from three segments joined together, and a self-check guard validates it before writing: length 1–160 characters, valid UTF-8, no control characters, and not only whitespace. If any check fails, the program throws instead of writing a bad entry. The program takes no input, reads no clock and uses no randomness, so every run writes byte-identical output. The file holds exactly the line, with no trailing newline.
 
 ## How to run it
 
